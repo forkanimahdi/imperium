@@ -18,6 +18,8 @@ export function updateCsrfToken() {
   }
 }
 
+updateCsrfToken()
+
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(`./pages/${name}.tsx`, import.meta.glob('./pages/**/*.tsx')),
