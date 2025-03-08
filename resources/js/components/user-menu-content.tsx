@@ -39,6 +39,7 @@ export function UserMenuContent({ user }: UserMenuContentProps) {
                     onClick={(e) => {
                         cleanup(); 
                         updateCsrfToken()
+                        window.location.reload()
                     }}
                   
                 >
