@@ -22,4 +22,11 @@ export default defineConfig({
             'ziggy-js': resolve(__dirname, 'vendor/tightenco/ziggy'),
         },
     },
+    server: {
+        https: true,  // Ensure the development server uses HTTPS
+    },
+    build: {
+        assetsInlineLimit: 0,  // Optionally, prevent asset URL embedding
+    },
+    base: '/build/', // Ensuring the path to assets is correct
 });
