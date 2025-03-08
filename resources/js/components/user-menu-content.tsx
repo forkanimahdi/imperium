@@ -1,4 +1,3 @@
-import { updateCsrfToken } from '@/app';
 import { DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
 import { UserInfo } from '@/components/user-info';
 import { useMobileNavigation } from '@/hooks/use-mobile-navigation';
@@ -36,12 +35,13 @@ export function UserMenuContent({ user }: UserMenuContentProps) {
                     method="post"
                     href={route('logout')}
                     as="button"
-                    onClick={(e) => {
-                        cleanup(); 
-                        updateCsrfToken()
-                        window.location.reload()
+                    onClick={async(e) => {
+                         cleanup(); 
+                        setTimeout(() => {
+                            
+                        }, 2000);
                     }}
-                  
+ 
                 >
                     <LogOut className="mr-2" />
                     Log out

@@ -1,8 +1,18 @@
 import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
+import { useEffect } from 'react';
 
 export default function Welcome() {
     const { auth } = usePage<SharedData>().props;
+    const { url } = usePage();
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.get('refresh') === 'true') {
+            window.location.href = '/'; 
+        }
+    }, [url]); 
+    
 
     return (
         <>
